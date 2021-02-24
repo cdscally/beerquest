@@ -1,0 +1,291 @@
+{
+  "info": {
+    "total": 222,
+    "rows": 222,
+    "offset": 0,
+    "limit": 500,
+    "page": 1,
+    "pages": 1,
+    "sql": "SELECT\n  *\nFROM dataset\nLIMIT 500;",
+    "title": "19/06/2017"
+  },
+  "fields": [
+    {
+      "id": "_row_id",
+      "datatype": "integer",
+      "title": "Row #"
+    },
+    {
+      "id": "name",
+      "datatype": "text",
+      "title": "name"
+    },
+    {
+      "id": "category",
+      "datatype": "text",
+      "title": "category"
+    },
+    {
+      "id": "url",
+      "datatype": "text",
+      "title": "url"
+    },
+    {
+      "id": "date",
+      "datatype": "timestamp",
+      "title": "date"
+    },
+    {
+      "id": "excerpt",
+      "datatype": "text",
+      "title": "excerpt"
+    },
+    {
+      "id": "thumbnail",
+      "datatype": "text",
+      "title": "thumbnail"
+    },
+    {
+      "id": "lat",
+      "datatype": "real",
+      "title": "lat"
+    },
+    {
+      "id": "lng",
+      "datatype": "real",
+      "title": "lng"
+    },
+    {
+      "id": "address",
+      "datatype": "text",
+      "title": "address"
+    },
+    {
+      "id": "phone",
+      "datatype": "text",
+      "title": "phone"
+    },
+    {
+      "id": "twitter",
+      "datatype": "text",
+      "title": "twitter"
+    },
+    {
+      "id": "stars_beer",
+      "datatype": "real",
+      "title": "stars_beer"
+    },
+    {
+      "id": "stars_atmosphere",
+      "datatype": "real",
+      "title": "stars_atmosphere"
+    },
+    {
+      "id": "stars_amenities",
+      "datatype": "real",
+      "title": "stars_amenities"
+    },
+    {
+      "id": "stars_value",
+      "datatype": "real",
+      "title": "stars_value"
+    },
+    {
+      "id": "tags",
+      "datatype": "text",
+      "title": "tags"
+    }
+  ],
+  "rows": [
+    {
+      "_row_id": 1,
+      "name": "Five star bar",
+      "category": "Pub reviews",
+      "url": "http://leedsbeer.info/?p=88",
+      "date": "2012-09-16T11:17:22",
+      "excerpt": "A great selection of cask ales, if you can make it through the sea of sports fans and hen nights to get to the bar.",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/09/20120913_200655.jpg",
+      "lat": 53.7956,
+      "lng": -1.5485,
+      "address": "North Concourse\r\nLeeds Railway Station\r\nLeeds LS1 4DY\r\n",
+      "phone": "0113 247 1676",
+      "twitter": "jdwtweet",
+      "stars_beer": 5,
+      "stars_atmosphere": 5,
+      "stars_amenities": 5,
+      "stars_value": 5,
+      "tags": "food,breakfast,beer garden,free wifi,coffee,sunday roasts"
+    },
+    {
+      "_row_id": 2,
+      "name": "Four point five star bar",
+      "category": "Pub reviews",
+      "url": "http://leedsbeer.info/?p=96",
+      "date": "2012-09-16T11:19:25",
+      "excerpt": "Standard mainline station pub. Nothing to love; nothing to hate. ",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/09/20120915_140254.jpg",
+      "lat": 53.7949,
+      "lng": -1.54737,
+      "address": "Leeds Railway Station \r\nLeeds LS1 4DY ",
+      "phone": "",
+      "twitter": "",
+      "stars_beer": 4.5,
+      "stars_atmosphere": 4.5,
+      "stars_amenities": 4.5,
+      "stars_value": 4.5,
+      "tags": "food,breakfast,free wifi,coffee,sofas"
+    },
+    {
+      "_row_id": 3,
+      "name": "Four star bar",
+      "category": "Bar reviews",
+      "url": "http://leedsbeer.info/?p=135",
+      "date": "2012-09-18T11:35:54",
+      "excerpt": "Little cafe bar in the White Cloth Gallery. Great atmosphere and decent selection of beers: definitely one to check out!",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/09/20120918_105713.jpg",
+      "lat": 53.7956,
+      "lng": -1.55028,
+      "address": "26 Aire Street\r\nLeeds LS1 4HT",
+      "phone": "0113 218 1923",
+      "twitter": "WhiteClothBar",
+      "stars_beer": 4,
+      "stars_atmosphere": 4,
+      "stars_amenities": 4,
+      "stars_value": 4,
+      "tags": "food,free wifi,coffee,sofas,membership discount"
+    },
+    {
+      "_row_id": 4,
+      "name": "Three point five star bar",
+      "category": "Closed venues",
+      "url": "http://leedsbeer.info/?p=165",
+      "date": "2012-09-21T12:22:56",
+      "excerpt": "With bad beer and weird opening times, this retro theme bar is surprisingly appealing.",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/09/20120919_230945.jpg",
+      "lat": 53.7959,
+      "lng": -1.54684,
+      "address": "40 Boar Lane \r\nLeeds LS1 4DA",
+      "phone": "0113 2458 063",
+      "twitter": "",
+      "stars_beer": 3.5,
+      "stars_atmosphere": 3.5,
+      "stars_amenities": 3.5,
+      "stars_value": 3.5,
+      "tags": "free wifi,dance floor,karaoke"
+    },
+    {
+      "_row_id": 5,
+      "name": "Three star bar",
+      "category": "Bar reviews",
+      "url": "http://leedsbeer.info/?p=185",
+      "date": "2012-09-21T14:20:02",
+      "excerpt": "Speakeasy-style underground club/bar with great beer selection and decent food.",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/09/20120920_121330.jpg",
+      "lat": 53.7962,
+      "lng": -1.54179,
+      "address": "7 Duncan Street\r\nLeeds LS1 6DQ",
+      "phone": "0113 243 3674",
+      "twitter": "distrikt_leeds",
+      "stars_beer": 3,
+      "stars_atmosphere": 3,
+      "stars_amenities": 3,
+      "stars_value": 3,
+      "tags": "food,free wifi,dance floor,live music"
+    },
+    {
+      "_row_id": 6,
+      "name": "Two point five star bar",
+      "category": "Closed venues",
+      "url": "http://leedsbeer.info/?p=196",
+      "date": "2012-09-21T18:25:54",
+      "excerpt": "Cult TV theme bar with dance floor. Cheap-ish drinks, but none of them very nice. Go for the arcade games!",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/09/20120920_205607.jpg",
+      "lat": 53.8023,
+      "lng": -1.54539,
+      "address": "46 Woodhouse Lane\r\nLeeds LS2 8PL",
+      "phone": "0113 244 9009",
+      "twitter": "fabcafeleeds",
+      "stars_beer": 2.5,
+      "stars_atmosphere": 2.5,
+      "stars_amenities": 2.5,
+      "stars_value": 2.5,
+      "tags": "dance floor,arcade games"
+    },
+    {
+      "_row_id": 7,
+      "name": "Two star bar",
+      "category": "Pub reviews",
+      "url": "http://leedsbeer.info/?p=213",
+      "date": "2012-09-23T17:34:39",
+      "excerpt": "The city centre's only traditional Irish pub, this chain offers a good selection of Irish grub but a rather plain selection of beer to go along with it.",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/09/20120922_145032.jpg",
+      "lat": 53.8008,
+      "lng": -1.54923,
+      "address": "26 Great George Street \r\nLeeds LS1 3DL",
+      "phone": "0113 244 0810",
+      "twitter": "ONeillsPubs",
+      "stars_beer": 2,
+      "stars_atmosphere": 2,
+      "stars_amenities": 2,
+      "stars_value": 2,
+      "tags": "food,breakfast,free wifi,coffee,sports,sunday roasts"
+    },
+    {
+      "_row_id": 8,
+      "name": "One point five star bar",
+      "category": "Bar reviews",
+      "url": "http://leedsbeer.info/?p=234",
+      "date": "2012-09-26T17:31:45",
+      "excerpt": "Looks like it's for the staff of the office block above, but is actually a very pleasant spot to relax by the river.",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/09/20120925_123918.jpg",
+      "lat": 53.7945,
+      "lng": -1.55388,
+      "address": "1 Whitehall Riverside \r\nLeeds LS1 4BN\r\n\r\n",
+      "phone": "0113 244 9080",
+      "twitter": "TheRiversideLS1",
+      "stars_beer": 1.5,
+      "stars_atmosphere": 1.5,
+      "stars_amenities": 1.5,
+      "stars_value": 1.5,
+      "tags": "food,breakfast,beer garden,free wifi,coffee,sofas,sports"
+    },
+    {
+      "_row_id": 9,
+      "name": "One star bar",
+      "category": "Bar reviews",
+      "url": "http://leedsbeer.info/?p=253",
+      "date": "2012-09-30T21:18:47",
+      "excerpt": "Not your average hotel bar. A chilled-out spot with great service, an extraordinary gin menu and some decent beer too.",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/09/20120930_172258.jpg",
+      "lat": 53.7972,
+      "lng": -1.55379,
+      "address": "23-25a York Place\r\nLeeds LS1 2EY",
+      "phone": "0113 204 2150",
+      "twitter": "",
+      "stars_beer": 1,
+      "stars_atmosphere": 1,
+      "stars_amenities": 1,
+      "stars_value": 1,
+      "tags": "food,free wifi,coffee,sofas"
+    },
+    {
+      "_row_id": 10,
+      "name": "Zero point five star bar",
+      "category": "Bar reviews",
+      "url": "http://leedsbeer.info/?p=278",
+      "date": "2012-10-02T06:24:10",
+      "excerpt": "An upmarket football bar focusing on cocktails  nothing special to bring us rushing back.",
+      "thumbnail": "http://leedsbeer.info/wp-content/uploads/2012/10/20120930_162655.jpg",
+      "lat": 53.7959,
+      "lng": -1.55329,
+      "address": "West Point\r\nWellington Street\r\nLeeds LS1 4JY ",
+      "phone": "0113 243 9546",
+      "twitter": "ToastLeeds",
+      "stars_beer": 0.5,
+      "stars_atmosphere": 0.5,
+      "stars_amenities": 0.5,
+      "stars_value": 0.5,
+      "tags": "food,breakfast,beer garden,coffee,sports,quiz,sunday roasts"
+    }
+  ]
+}
