@@ -7,6 +7,7 @@ import com.scally.beerquest.model.PubDAO;
 import com.scally.beerquest.repository.PubRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @Component
 @Slf4j
+@Profile("!test")
 public class DataLoader {
 
     @Autowired

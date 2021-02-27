@@ -3,6 +3,7 @@ package com.scally.beerquest.controller;
 import com.scally.beerquest.model.Pub;
 import com.scally.beerquest.model.RatingCriteria;
 import com.scally.beerquest.service.BeerQuestService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/pubs")
+@Slf4j
 public class PubsController {
 
     private final BeerQuestService service;
@@ -23,6 +25,8 @@ public class PubsController {
     @RequestMapping(produces = "application/json", method = RequestMethod.GET)
     public List<Pub> getAllPubs() {
 
+        log.info("Request received to retrieve all pubs in dataset");
+
         return service.getAllPubs();
 
     }
@@ -32,38 +36,26 @@ public class PubsController {
                                     @RequestParam (name = "lat") double latitude,
                                     @RequestParam (name = "long") double longitude) {
 
+        log.info("Request received to retrieve {} closest pubs to location({}, {})", limit, latitude, longitude);
+
         return service.getClosestPubs(latitude, longitude, limit);
 
     }
 
     @RequestMapping(value = "/top", produces = "application/json", method = RequestMethod.GET)
-    public List<Pub> getTopPubsByMinimumScore(@RequestParam (name = "criteria") String criteria,
+    public List<Pub> getTopPubsByMinimumScore(@RequestParam (name = "criteria") RatingCriteria criteria,
                                               @RequestParam (name = "minimum-score") double minScore,
                                               @RequestParam (name = "limit", defaultValue = "1") int limit) {
 
-        RatingCriteria ratingCriteria = RatingCriteria.fromQueryParam(criteria).orElseThrow();
+        log.info("Request received to retrieve top {} pubs with {} rating greater than {}", limit, criteria, minScore);
 
-        switch (ratingCriteria) {
-            case BEER: {
-                return service.getPubsByBeerRating(minScore, limit);
-            }
-            case ATMOSPHERE: {
-                return service.getPubsByAtmosphereRating(minScore, limit);
-            }
-            case AMENITIES: {
-                return service.getPubsByAmenitiesRating(minScore, limit);
-            }
-            case VALUE: {
-                return service.getPubsByValueRating(minScore, limit);
-            }
-            default:
-                //TODO
-                return null;
-        }
+        return service.getPubsByRating(criteria, minScore, limit);
     }
 
     @RequestMapping(value = "/tag", produces = "application/json", method = RequestMethod.GET)
     public List<Pub> getPubsByTag(@RequestParam (name = "tag") String tag) {
+
+        log.info("Request received to retrieve all pubs with tag {}", tag);
 
         return service.getTaggedPubs(tag);
 

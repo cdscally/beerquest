@@ -4,10 +4,10 @@ import com.scally.beerquest.BeerquestApplication;
 import com.scally.beerquest.model.PubDAO;
 import org.jeasy.random.EasyRandom;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -21,15 +21,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ActiveProfiles("test")
 public class PubRepositoryTest {
 
-    //TODO currently a bit of a hack in that it initialises Spring, so all data loaded into db - couldn't get the repository bean spinning up correctly without brining up spring
-
     @Autowired
     private PubRepository underTest;
 
     @Test
     public void shouldReturnAllPubsWithAmenitiesScoreAboveAThreshold(){
 
-        //TODO couldn't get surefire properly working with junit5 to enable use of @BeforeEach
         underTest.deleteAll();
 
         EasyRandom generator = new EasyRandom();
@@ -44,7 +41,7 @@ public class PubRepositoryTest {
 
         underTest.saveAll(pubDaoList);
 
-        Optional<List<PubDAO>> queryResults = underTest.findAllByStarsAmenitiesGreaterThanEqual(4.0);
+        Optional<List<PubDAO>> queryResults = underTest.findAllByStarsAmenitiesGreaterThanEqual(4.0, Sort.by(Sort.Direction.DESC, "starsAmenities"));
         List<PubDAO> pubDAOS = queryResults.get();
         assertEquals(1, pubDAOS.size());
         assertEquals(pubDAOS.get(0), pubDAO1);
@@ -68,7 +65,7 @@ public class PubRepositoryTest {
 
         underTest.saveAll(pubDaoList);
 
-        Optional<List<PubDAO>> queryResults = underTest.findAllByStarsBeerGreaterThanEqual(4.0);
+        Optional<List<PubDAO>> queryResults = underTest.findAllByStarsBeerGreaterThanEqual(4.0, Sort.by(Sort.Direction.DESC, "starsBeer"));
         List<PubDAO> pubDAOS = queryResults.get();
         assertEquals(1, pubDAOS.size());
         assertEquals(pubDAOS.get(0), pubDAO1);
@@ -92,7 +89,7 @@ public class PubRepositoryTest {
 
         underTest.saveAll(pubDaoList);
 
-        Optional<List<PubDAO>> queryResults = underTest.findAllByStarsAtmosphereGreaterThanEqual(4.0);
+        Optional<List<PubDAO>> queryResults = underTest.findAllByStarsAtmosphereGreaterThanEqual(4.0, Sort.by(Sort.Direction.DESC, "starsAtmosphere"));
         List<PubDAO> pubDAOS = queryResults.get();
         assertEquals(1, pubDAOS.size());
         assertEquals(pubDAOS.get(0), pubDAO1);
@@ -116,7 +113,7 @@ public class PubRepositoryTest {
 
         underTest.saveAll(pubDaoList);
 
-        Optional<List<PubDAO>> queryResults = underTest.findAllByStarsValueGreaterThanEqual(4.0);
+        Optional<List<PubDAO>> queryResults = underTest.findAllByStarsValueGreaterThanEqual(4.0, Sort.by(Sort.Direction.DESC, "starsValue"));
         List<PubDAO> pubDAOS = queryResults.get();
         assertEquals(1, pubDAOS.size());
         assertEquals(pubDAOS.get(0), pubDAO1);

@@ -3,6 +3,7 @@ package com.scally.beerquest.service;
 import com.scally.beerquest.mapper.PubMapper;
 import com.scally.beerquest.model.Pub;
 import com.scally.beerquest.model.PubDAO;
+import com.scally.beerquest.model.RatingCriteria;
 import com.scally.beerquest.repository.PubRepository;
 import org.jeasy.random.EasyRandom;
 import org.junit.jupiter.api.Test;
@@ -10,12 +11,14 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -114,24 +117,52 @@ public class BeerQuestServiceTest {
                 .starsBeer(1.5)
                 .build();
 
-        List<Pub> pubs = List.of(okBeerPub, badBeerPub, goodBeerPub);
-        when(mockPubRepository.findAllByStarsBeerGreaterThanEqual(minScore)).thenReturn(Optional.of(List.of(new PubDAO())));
+        List<Pub> pubs = List.of(goodBeerPub, okBeerPub, badBeerPub);
+        when(mockPubRepository.findAllByStarsBeerGreaterThanEqual(minScore, Sort.by(Sort.Direction.DESC, "starsBeer"))).thenReturn(Optional.of(List.of(new PubDAO())));
         when(mockMapper.toPubList(any())).thenReturn(pubs);
 
-        List<Pub> topPubByBeerRating = underTest.getPubsByBeerRating(minScore, 1);
+        List<Pub> topPubByBeerRating = underTest.getPubsByRating(RatingCriteria.beer, minScore, 1);
         assertEquals( 1, topPubByBeerRating.size());
         assertEquals(goodBeerPub, topPubByBeerRating.get(0));
 
-        List<Pub> multiplePubsByBeerRating = underTest.getPubsByBeerRating(minScore, 2);
+        List<Pub> multiplePubsByBeerRating = underTest.getPubsByRating(RatingCriteria.beer, minScore, 2);
         assertEquals(2, multiplePubsByBeerRating.size());
         assertEquals(goodBeerPub, multiplePubsByBeerRating.get(0));
         assertEquals(okBeerPub, multiplePubsByBeerRating.get(1));
 
-        List<Pub> allPubsByBeerRating = underTest.getPubsByBeerRating(minScore, 10);
+        List<Pub> allPubsByBeerRating = underTest.getPubsByRating(RatingCriteria.beer, minScore, 10);
         assertEquals(3, allPubsByBeerRating.size());
         assertEquals(goodBeerPub, allPubsByBeerRating.get(0));
         assertEquals(okBeerPub, allPubsByBeerRating.get(1));
         assertEquals(badBeerPub, allPubsByBeerRating.get(2));
+
+    }
+
+    @Test
+    void shouldGetPubsByTag(){
+
+        EasyRandom generator = new EasyRandom();
+
+        Pub poolTableBeerGardenPub = generator.nextObject(Pub.class).toBuilder()
+                .tags("beer garden, pool table")
+                .build();
+
+        Pub poolTableArcadeGamesPub = generator.nextObject(Pub.class).toBuilder()
+                .tags("pool table, arcade games")
+                .build();
+
+        Pub arcadeGamesJukeboxPub = generator.nextObject(Pub.class).toBuilder()
+                .tags("arcade games, jukebox")
+                .build();
+
+        List<Pub> pubs = List.of(poolTableArcadeGamesPub, poolTableBeerGardenPub, arcadeGamesJukeboxPub);
+        when(mockMapper.toPubList(any())).thenReturn(pubs);
+
+        List<Pub> poolTablePubs = underTest.getTaggedPubs("pool table");
+        assertEquals(2, poolTablePubs.size());
+        assertThat(poolTablePubs).contains(poolTableArcadeGamesPub);
+        assertThat(poolTablePubs).contains(poolTableBeerGardenPub);
+        assertThat(poolTablePubs).doesNotContain(arcadeGamesJukeboxPub);
 
     }
 

@@ -11,54 +11,54 @@ import java.time.LocalDateTime;
 public class Pub {
 
     @JsonProperty("_row_id")
-    private final Integer id;
+    Integer id;
 
     @JsonProperty("name")
-    private final String name;
+    String name;
 
     @JsonProperty("category")
-    private final String category;
+    String category;
 
     @JsonProperty("url")
-    private final String url;
+    String url;
 
     @JsonProperty("date")
-    private final LocalDateTime date;
+    LocalDateTime date;
 
     @JsonProperty("excerpt")
-    private final String exceprt;
+    String exceprt;
 
     @JsonProperty("thumbnail")
-    private final String thumbnail;
+    String thumbnail;
 
     @JsonProperty("lat")
-    private final Double latitude;
+    Double latitude;
 
     @JsonProperty("lng")
-    private final Double longitude;
+    Double longitude;
 
     @JsonProperty("address")
-    private final String address;
+    String address;
 
     @JsonProperty("phone")
-    private final String phone;
+    String phone;
 
     @JsonProperty("twitter")
-    private final String twitter;
+    String twitter;
 
     @JsonProperty("stars_beer")
-    private final Double starsBeer;
+    Double starsBeer;
 
     @JsonProperty("stars_atmosphere")
-    private final Double starsAtmosphere;
+    Double starsAtmosphere;
 
     @JsonProperty("stars_amenities")
-    private final Double starsAmenities;
+    Double starsAmenities;
 
     @JsonProperty("stars_value")
-    private final Double starsValue;
+    Double starsValue;
 
     @JsonProperty("tags")
-    private final String tags;
+    String tags;
 
 }

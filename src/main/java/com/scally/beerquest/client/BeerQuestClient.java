@@ -1,7 +1,6 @@
 package com.scally.beerquest.client;
 
 import com.scally.beerquest.model.Pub;
-import com.scally.beerquest.model.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -15,7 +14,6 @@ import java.util.List;
 @Component
 public class BeerQuestClient {
 
-    //TODO naive assumption made here based on knoweldge of number of records in dataset. This could be better handled via pagination
     private static final String BASE_URL = "https://datamillnorth.org/api/table/wk7xz_hf8bv?$limit=500";
 
     @Autowired
