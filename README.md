@@ -38,6 +38,7 @@ There are four endpoints presented by the application, as follows:
     * There is one optional query parameter - `limit` which determines how many pubs to return. The default value for this is 1, so if the endpoint is called without it, it will show the single closest pub. If a larger limit is provided, pubs are shown in order from closest pub to further pubs
 
 * `GET /pubs/tag` - this returns a list of pubs which contain the given tag in the tags field
+    * There is one required query parameter `tag` which is the tag to saerch by
 
 * `GET /pubs/top` - this returns a list of pubs which exceed a provided score threshold for the ratings provided for beer, amenities, atmosphere or value
     * There are two required query parameters
