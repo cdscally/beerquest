@@ -31,11 +31,13 @@ public class PubRepositoryTest {
 
         EasyRandom generator = new EasyRandom();
 
-        PubDAO pubDAO1 = generator.nextObject(PubDAO.class);
-        pubDAO1.setStarsAmenities(5.0);
+        PubDAO pubDAO1 = generator.nextObject(PubDAO.class).toBuilder()
+                .starsAmenities(5.0)
+                .build();
 
-        PubDAO pubDAO2 = generator.nextObject(PubDAO.class);
-        pubDAO2.setStarsAmenities(2.0);
+        PubDAO pubDAO2 = generator.nextObject(PubDAO.class).toBuilder()
+                .starsAmenities(2.0)
+                .build();
 
         List<PubDAO> pubDaoList = List.of(pubDAO1, pubDAO2);
 
@@ -55,11 +57,13 @@ public class PubRepositoryTest {
 
         EasyRandom generator = new EasyRandom();
 
-        PubDAO pubDAO1 = generator.nextObject(PubDAO.class);
-        pubDAO1.setStarsBeer(5.0);
+        PubDAO pubDAO1 = generator.nextObject(PubDAO.class).toBuilder()
+                .starsBeer(5.0)
+                .build();
 
-        PubDAO pubDAO2 = generator.nextObject(PubDAO.class);
-        pubDAO2.setStarsBeer(2.0);
+        PubDAO pubDAO2 = generator.nextObject(PubDAO.class).toBuilder()
+                .starsBeer(2.0)
+                .build();
 
         List<PubDAO> pubDaoList = List.of(pubDAO1, pubDAO2);
 
@@ -79,11 +83,13 @@ public class PubRepositoryTest {
 
         EasyRandom generator = new EasyRandom();
 
-        PubDAO pubDAO1 = generator.nextObject(PubDAO.class);
-        pubDAO1.setStarsAtmosphere(5.0);
+        PubDAO pubDAO1 = generator.nextObject(PubDAO.class).toBuilder()
+                .starsAtmosphere(5.0)
+                .build();
 
-        PubDAO pubDAO2 = generator.nextObject(PubDAO.class);
-        pubDAO2.setStarsAtmosphere(2.0);
+        PubDAO pubDAO2 = generator.nextObject(PubDAO.class).toBuilder()
+                .starsAtmosphere(2.0)
+                .build();
 
         List<PubDAO> pubDaoList = List.of(pubDAO1, pubDAO2);
 
@@ -103,11 +109,13 @@ public class PubRepositoryTest {
 
         EasyRandom generator = new EasyRandom();
 
-        PubDAO pubDAO1 = generator.nextObject(PubDAO.class);
-        pubDAO1.setStarsValue(5.0);
+        PubDAO pubDAO1 = generator.nextObject(PubDAO.class).toBuilder()
+                .starsValue(5.0)
+                .build();
 
-        PubDAO pubDAO2 = generator.nextObject(PubDAO.class);
-        pubDAO2.setStarsValue(2.0);
+        PubDAO pubDAO2 = generator.nextObject(PubDAO.class).toBuilder()
+                .starsValue(2.0)
+                .build();
 
         List<PubDAO> pubDaoList = List.of(pubDAO1, pubDAO2);
 

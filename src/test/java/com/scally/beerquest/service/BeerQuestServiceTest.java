@@ -118,7 +118,7 @@ public class BeerQuestServiceTest {
                 .build();
 
         List<Pub> pubs = List.of(goodBeerPub, okBeerPub, badBeerPub);
-        when(mockPubRepository.findAllByStarsBeerGreaterThanEqual(minScore, Sort.by(Sort.Direction.DESC, "starsBeer"))).thenReturn(Optional.of(List.of(new PubDAO())));
+        when(mockPubRepository.findAllByStarsBeerGreaterThanEqual(minScore, Sort.by(Sort.Direction.DESC, "starsBeer"))).thenReturn(Optional.of(List.of(PubDAO.builder().build())));
         when(mockMapper.toPubList(any())).thenReturn(pubs);
 
         List<Pub> topPubByBeerRating = underTest.getPubsByRating(RatingCriteria.beer, minScore, 1);
